@@ -18,7 +18,7 @@ namespace PleerAPI
 		TrackList TracksSearch(String query, int page = 1, int resultOnPage = 10, string quality = Quality.All);
 
 		[Description("Получить информацию о треке")]
-		TrackInfo GetTrackInfo(String trackId);
+		TrackInfoRs GetTrackInfo(String trackId);
 
 		[Description("Получить текст трека")]
 		TrackLyrics GetTrackLyrics(String trackId);

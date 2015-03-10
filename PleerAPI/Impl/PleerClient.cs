@@ -18,9 +18,8 @@ namespace PleerAPI.Impl
 
 		public TokenInfo Token { get; private set; }
 
-		private const String GrantType = "client_credentials";
 		private const String TokenUrl = "http://api.pleer.com/token.php";
-//		private const String ResourceUrl = "http://api.pleer.com/resource.php";
+		//		private const String ResourceUrl = "http://api.pleer.com/resource.php";
 		private const String ResourceUrl = "http://api.pleer.com/index.php";
 
 		public PleerClient(string clientId, string clientPassword)
@@ -38,146 +37,105 @@ namespace PleerAPI.Impl
 
 		public TokenInfo GetTokenInfo()
 		{
-			var client = new RestClient(TokenUrl);
-
-			var request = new RestRequest { Method = Method.POST };
-
-			request.AddParameter("grant_type", GrantType);
-			request.AddParameter("client_id", _clientId);
-			request.AddParameter("client_secret", _clientPassword);
-
-			request.AddParameter("application/x-www-form-urlencoded", new JObject(), ParameterType.RequestBody);
-
-			var response = client.Execute(request);
-			var content = response.Content;
-
-			return JsonConvert.DeserializeObject<TokenInfo>(content);
+			return
+				RestRequest<TokenInfo>(new Dictionary<string, object>
+				{
+					{"grant_type", "client_credentials"},
+					{"client_id", _clientId},
+					{"client_secret", _clientPassword}
+				}, TokenUrl);
 		}
 
 		public TrackList TracksSearch(string query, int page = 1, int resultOnPage = 10, string quality = Quality.All)
 		{
-			var client = new RestClient(ResourceUrl);
-
-			var request = new RestRequest { Method = Method.POST };
-			
-			request.AddParameter("access_token", Token.AccessToken);
-			request.AddParameter("method", "tracks_search");
-			request.AddParameter("query", query);
-			request.AddParameter("page", page);
-			request.AddParameter("resultOnPage", resultOnPage);
-			request.AddParameter("quality", quality);
-
-			request.AddParameter("application/x-www-form-urlencoded", new JObject(), ParameterType.RequestBody);
-
-			var response = client.Execute(request);
-			var content = response.Content;
-
-			var trackList = JsonConvert.DeserializeObject<TrackList>(content);
-
-			return trackList;
+			return
+				RestRequest<TrackList>(new Dictionary<string, object>
+				{
+					{"access_token", Token.AccessToken}, 
+					{"method", "tracks_search"},
+					{"query", query},
+					{"page", page},
+					{"resultOnPage", resultOnPage},
+					{"quality", quality}
+				});
 		}
 
-		public TrackInfo GetTrackInfo(string trackId)
+		public TrackInfoRs GetTrackInfo(string trackId)
 		{
-			var client = new RestClient(ResourceUrl);
-
-			var request = new RestRequest { Method = Method.POST };
-
-			request.AddParameter("access_token", Token.AccessToken);
-			request.AddParameter("method", "tracks_get_info");
-			request.AddParameter("track_id", trackId);
-
-			request.AddParameter("application/x-www-form-urlencoded", new JObject(), ParameterType.RequestBody);
-
-			var response = client.Execute(request);
-			var content = response.Content;
-			
-			var trackInfo = JsonConvert.DeserializeObject<TrackInfo>(content);
-
-			return trackInfo;
+			return
+				RestRequest<TrackInfoRs>(new Dictionary<string, object>
+				{
+					{"access_token", Token.AccessToken}, 
+					{"method", "tracks_get_info"},
+					{"track_id", trackId}
+				});
 		}
 
 		public TrackLyrics GetTrackLyrics(string trackId)
 		{
-			var client = new RestClient(ResourceUrl);
-
-			var request = new RestRequest { Method = Method.POST };
-
-			request.AddParameter("access_token", Token.AccessToken);
-			request.AddParameter("method", "tracks_get_lyrics");
-			request.AddParameter("track_id", trackId);
-
-			request.AddParameter("application/x-www-form-urlencoded", new JObject(), ParameterType.RequestBody);
-
-			var response = client.Execute(request);
-			var content = response.Content;
-
-			var trackLyrics = JsonConvert.DeserializeObject<TrackLyrics>(content);
-
-			return trackLyrics;
+			return
+				RestRequest<TrackLyrics>(new Dictionary<string, object>
+				{
+					{"access_token", Token.AccessToken}, 
+					{"method", "tracks_get_lyrics"},
+					{"track_id", trackId}
+				});
 		}
 
 		public TrackUrl GetTrackDownloadLink(string trackId, string reason = Reason.Listen)
 		{
-			var client = new RestClient(ResourceUrl);
-
-			var request = new RestRequest { Method = Method.POST };
-
-			request.AddParameter("access_token", Token.AccessToken);
-			request.AddParameter("method", "tracks_get_download_link");
-			request.AddParameter("track_id", trackId);
-			request.AddParameter("reason", reason);
-
-			request.AddParameter("application/x-www-form-urlencoded", new JObject(), ParameterType.RequestBody);
-
-			var response = client.Execute(request);
-			var content = response.Content;
-
-			var trackUrl = JsonConvert.DeserializeObject<TrackUrl>(content);
-
-			return trackUrl;
+			return
+				RestRequest<TrackUrl>(new Dictionary<string, object>
+				{
+					{"access_token", Token.AccessToken}, 
+					{"method", "tracks_get_download_link"},
+					{"track_id", trackId},
+					{"reason", reason}
+				});
 		}
 
 		public TopTrackList GetTopList(int listType, int page, String language)
 		{
-			var client = new RestClient(ResourceUrl);
-
-			var request = new RestRequest { Method = Method.POST };
-
-			request.AddParameter("access_token", Token.AccessToken);
-			request.AddParameter("method", "get_top_list");
-			request.AddParameter("list_type", listType);
-			request.AddParameter("page", page);
-			request.AddParameter("language", language);
-
-			request.AddParameter("application/x-www-form-urlencoded", new JObject(), ParameterType.RequestBody);
-
-			var response = client.Execute(request);
-			var content = response.Content;
-
-			var trackList = JsonConvert.DeserializeObject<TopTrackList>(content);
-
-			return trackList;
+			return
+				RestRequest<TopTrackList>(new Dictionary<string, object>
+				{
+					{"access_token", Token.AccessToken}, 
+					{"method", "get_top_list"},
+					{"list_type", listType},
+					{"page", page},
+					{"language", language}
+				});
 		}
 
 		public SuggestList GetSuggest(string part)
 		{
-			var client = new RestClient(ResourceUrl);
+			return RestRequest<SuggestList>(new Dictionary<string, object>
+			{
+				{"access_token", Token.AccessToken}, 
+				{"method", "get_suggest"}, 
+				{"part", part}
+			});
+		}
+
+		private static T RestRequest<T>(Dictionary<String, Object> parameters, String url = ResourceUrl)
+		{
+			var client = new RestClient(url);
 
 			var request = new RestRequest { Method = Method.POST };
 
-			request.AddParameter("access_token", Token.AccessToken);
-			request.AddParameter("method", "get_suggest");
-			request.AddParameter("part", part);
+			foreach (var parameter in parameters)
+			{
+				request.AddParameter(parameter.Key, parameter.Value);
+			}
 
 			request.AddParameter("application/x-www-form-urlencoded", new JObject(), ParameterType.RequestBody);
 
 			var response = client.Execute(request);
 			var content = response.Content;
 
-			var suggest = JsonConvert.DeserializeObject<SuggestList>(content);
+			var result = JsonConvert.DeserializeObject<T>(content);
 
-			return suggest;
+			return result;
 		}
 	}
 }
