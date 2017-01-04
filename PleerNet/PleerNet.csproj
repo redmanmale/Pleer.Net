@@ -7,8 +7,8 @@
     <ProjectGuid>{4562FC5F-6D9E-40F4-82DF-47B7602437C9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PleerAPI</RootNamespace>
-    <AssemblyName>PleerAPI</AssemblyName>
+    <RootNamespace>PleerNet</RootNamespace>
+    <AssemblyName>PleerNet</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -28,40 +28,43 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\PleerNet.xml</DocumentationFile>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="RestSharp">
-      <HintPath>..\packages\RestSharp.105.0.1\lib\net4\RestSharp.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\AbstractResponse.cs" />
-    <Compile Include="Common\Language.cs" />
-    <Compile Include="Common\ListType.cs" />
-    <Compile Include="Common\Quality.cs" />
-    <Compile Include="Common\Reason.cs" />
-    <Compile Include="Common\SuggestList.cs" />
-    <Compile Include="Common\TokenInfo.cs" />
-    <Compile Include="Common\TrackInfo.cs" />
-    <Compile Include="Common\TrackList.cs" />
-    <Compile Include="Common\TrackLyrics.cs" />
-    <Compile Include="Common\TrackUrl.cs" />
-    <Compile Include="IClient.cs" />
-    <Compile Include="Impl\PleerClient.cs" />
+    <Compile Include="HttpClientExtensions.cs" />
+    <Compile Include="Model\BaseTrack.cs" />
+    <Compile Include="Model\Response\BaseResponse.cs" />
+    <Compile Include="Model\LanguageEnum.cs" />
+    <Compile Include="Model\IntervalEnum.cs" />
+    <Compile Include="Model\QualityEnum.cs" />
+    <Compile Include="Model\ReasonEnum.cs" />
+    <Compile Include="Model\Response\SuggestListResponse.cs" />
+    <Compile Include="Model\Response\TokenInfoResponse.cs" />
+    <Compile Include="Model\Response\TopTrackListResponse.cs" />
+    <Compile Include="Model\Response\TopTracksResponse.cs" />
+    <Compile Include="Model\Track.cs" />
+    <Compile Include="Model\TrackInfo.cs" />
+    <Compile Include="Model\Response\TrackListResponse.cs" />
+    <Compile Include="Model\Response\TrackLyricsResponse.cs" />
+    <Compile Include="Model\Response\TrackUrlResponse.cs" />
+    <Compile Include="Model\Response\TrackInfoResponse.cs" />
+    <Compile Include="PleerApi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestParameters.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
