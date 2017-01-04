@@ -57,9 +57,9 @@ namespace PleerNet
         /// <summary>
         /// Authorize by getting access token
         /// </summary>
-        public async Task AuthorizeAsync(string clientId, string clientPassword)
+        public async Task AuthorizeAsync(string appId, string appKey)
         {
-            TokenInfo = await GetTokenInfoAsync(clientId, clientPassword).ConfigureAwait(false);
+            TokenInfo = await GetTokenInfoAsync(appId, appKey).ConfigureAwait(false);
             SetUpExpireTokenTimer();
         }
 
@@ -197,13 +197,13 @@ namespace PleerNet
             _expireTokenTimer.Start();
         }
 
-        private Task<TokenInfoResponse> GetTokenInfoAsync(string clientId, string clientPassword)
+        private Task<TokenInfoResponse> GetTokenInfoAsync(string appId, string appKey)
         {
             var requestParameters = new RequestParameters
             {
                 {"grant_type", "client_credentials"},
-                {"client_id", clientId},
-                {"client_secret", clientPassword}
+                {"client_id", appId},
+                {"client_secret", appKey}
             };
 
             return _client.RequestAsync<TokenInfoResponse>(requestParameters, TokenUrl);
