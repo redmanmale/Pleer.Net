@@ -30,7 +30,7 @@ test:
     - Pleer.Net.Tests.dll
 
 artifacts:
-  - path: '**\Pleer.Net*.nupkg'
+  - path: '**\*.nupkg'
 
 deploy:
   - provider: GitHub
