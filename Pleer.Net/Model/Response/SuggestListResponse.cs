@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace PleerNet.Model.Response
+namespace Pleer.Net.Model.Response
 {
     public class SuggestListResponse : BaseResponse
     {

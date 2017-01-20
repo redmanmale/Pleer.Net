@@ -2,9 +2,9 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using PleerNet.Model.Response;
+using Pleer.Net.Model.Response;
 
-namespace PleerNet
+namespace Pleer.Net
 {
     internal static class HttpClientExtensions
     {

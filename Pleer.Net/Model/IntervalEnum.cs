@@ -1,4 +1,4 @@
-﻿namespace PleerNet.Model
+﻿namespace Pleer.Net.Model
 {
     public enum IntervalEnum
     {

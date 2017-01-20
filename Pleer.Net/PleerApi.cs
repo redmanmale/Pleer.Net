@@ -2,10 +2,10 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Timers;
-using PleerNet.Model;
-using PleerNet.Model.Response;
+using Pleer.Net.Model;
+using Pleer.Net.Model.Response;
 
-namespace PleerNet
+namespace Pleer.Net
 {
     /// <summary>
     /// Pleer.net (Prostopleer) API

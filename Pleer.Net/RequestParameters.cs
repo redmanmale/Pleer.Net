@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace PleerNet
+namespace Pleer.Net
 {
     internal class RequestParameters : Dictionary<string, string>
     {

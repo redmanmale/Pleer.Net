@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace PleerNet.Model
+namespace Pleer.Net.Model
 {
     public class Track : BaseTrack
     {

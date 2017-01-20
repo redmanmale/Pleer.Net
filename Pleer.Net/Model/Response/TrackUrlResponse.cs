@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace PleerNet.Model.Response
+namespace Pleer.Net.Model.Response
 {
     public class TrackUrlResponse : BaseResponse
     {

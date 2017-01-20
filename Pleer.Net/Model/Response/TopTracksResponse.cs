@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace PleerNet.Model.Response
+namespace Pleer.Net.Model.Response
 {
-    public class TrackListResponse : BaseResponse
+    public class TopTracksResponse : BaseResponse
     {
         [JsonProperty("count")]
         public int Count { get; set; }
 
-        [JsonProperty("tracks")]
+        [JsonProperty("data")]
         public Dictionary<string, Track> Tracks { get; set; }
     }
 }

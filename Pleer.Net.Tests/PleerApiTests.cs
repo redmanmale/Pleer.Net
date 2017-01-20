@@ -3,9 +3,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using PleerNet.Model;
+using Pleer.Net.Model;
 
-namespace PleerNet.Tests
+namespace Pleer.Net.Tests
 {
     [TestFixture]
     public class PleerApiTests
