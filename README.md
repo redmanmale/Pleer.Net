@@ -1,6 +1,6 @@
 ﻿# Pleer.NET (Prostopleer) API
 
-[![Build status](https://ci.appveyor.com/api/projects/status/1p18i08yejbimdyd/branch/master?svg=true)](https://ci.appveyor.com/project/redmanmale/pleer.net)
+[![Build status](https://ci.appveyor.com/api/projects/status/1p18i08yejbimdyd/branch/master?svg=true)](https://ci.appveyor.com/project/redmanmale/pleer-net)
 
 It's a C# wrapper for [Pleer.net](http://pleer.net) API. It takes care of all interacting with service (HTTP requests, authorization and mapping the JSON data to .NET classes).
 

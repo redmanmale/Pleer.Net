@@ -16,15 +16,12 @@ build:
   publish_nuget: true
   publish_nuget_symbols: true
 
-init:
-  - ps: $env:GIT_HASH = $env:APPVEYOR_REPO_COMMIT.Substring(0, 7)
-
 assembly_info:
   patch: true
   file: AssemblyInfo.*
   assembly_version: '{version}'
   assembly_file_version: '{version}'
-  assembly_informational_version: '{version}-$(GIT_HASH)-$(APPVEYOR_REPO_BRANCH)'
+  assembly_informational_version: '{version}'
 
 shallow_clone: true
 

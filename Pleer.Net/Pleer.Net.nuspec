@@ -10,6 +10,6 @@
     <projectUrl>https://github.com/redmanmale/Pleer.Net</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A c# wrapper for the Pleer.net (ProstoPleer) API.</description>
-    <copyright>Copyright © 2017 redmanmale</copyright>
+    <copyright>Copyright (c) 2017 redmanmale</copyright>
   </metadata>
 </package>
