@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PleerNet")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Pleer.Net")]
+[assembly: AssemblyDescription("A c# wrapper for the Pleer.net (ProstoPleer) API.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PleerNet")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyProduct("Pleer.Net")]
+[assembly: AssemblyCopyright("Copyright © 2017 redmanmale")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

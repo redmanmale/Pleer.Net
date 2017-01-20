@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Pleer.Net</id>
+    <version>$version$</version>
+    <title>Pleer.Net</title>
+    <authors>redmanmale</authors>
+    <owners>redmanmale</owners>
+    <licenseUrl>https://github.com/redmanmale/Pleer.Net/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/redmanmale/Pleer.Net</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A c# wrapper for the Pleer.net (ProstoPleer) API.</description>
+    <copyright>Copyright © 2017 redmanmale</copyright>
+  </metadata>
+</package>
