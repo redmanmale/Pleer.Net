@@ -29,9 +29,6 @@ test:
   assemblies:
     - Pleer.Net.Tests.dll
 
-artifacts:
-  - path: '**\*.nupkg'
-
 deploy:
   - provider: GitHub
     name: github_release

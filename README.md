@@ -31,8 +31,5 @@ Official documentation [page](http://pleer.net/api). Enjoy!
 Based on [ProstoWinPleer](https://github.com/crowar/ProstoWinPleer) by [crowar](https://github.com/crowar).
 
 ## Plans
-* CI
-* Nuget.org
-* GitHub Releases
 * Cross platform (Mono, Core)
 * ...
